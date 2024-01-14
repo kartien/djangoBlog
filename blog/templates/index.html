@@ -1,0 +1,14 @@
+
+{% extends 'base.html' %}  
+{% block content %} 
+
+{% include 'nav/navbar.html' %}
+{% load static %} 
+
+<body class="page">
+  <link rel="stylesheet" href="{% static 'css/page.css' %}" />
+  <div class="container p-5">
+    <h1 class="fs-3">Kartier Blog</h1>
+  </div>
+</body>
+{% endblock  %}
