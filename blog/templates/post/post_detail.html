@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% include 'nav/navbar.html' %}
+{% load static %}
+{% autoescape off %}
+
+<div class="container">
+    
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.date }}</p>
+    <div>{{ post.content|safe }}</div>
+</div>
+
+{% endautoescape %}
+{% endblock content %}
