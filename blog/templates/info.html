@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% include 'nav/navbar.html' %}
+{% load static %} 
+<div class="container">
+    <div class="row justify-content-center mt-4">
+       <div class="col-md-8">
+        <h1>Acerca de este proyecto</h1>
+        <p>Este proyecto de código abierto utiliza el framework Django para desarrollar una plataforma de publicación de artículos. Apreciamos y alentamos las contribuciones de la comunidad para mejorar y expandir esta plataforma.</p>
+
+        <h2>Detalles Técnicos</h2>
+        <ul>
+            <li>Framework: Django</li>
+            <li>Base de datos: SQLite</li>
+            <li>Estamos utilizando [agregue bibliotecas o herramientas específicas]</li>
+        </ul>
+
+        <h2>Contribuciones</h2>
+        <p>Agradecemos las contribuciones a través de informes de errores, solicitudes de funciones y mejoras en la documentación. Puedes contribuir a través de nuestro repositorio en <a href="enlace a tu repositorio en GitHub">GitHub</a>.</p>
+
+        <h2>Estado del Proyecto</h2>
+        <p>Este proyecto se encuentra actualmente en desarrollo activo. Estamos trabajando para mejorar y expandir sus funcionalidades.</p>
+
+        <h2>Cómo Iniciar</h2>
+        <p>Para comenzar a usar el proyecto, sigue las instrucciones en el archivo README de nuestro repositorio en GitHub.</p>
+
+        <!-- Agrega más secciones según tus necesidades -->
+
+       </div>
+    </div>
+</div>
+{% endblock content %}

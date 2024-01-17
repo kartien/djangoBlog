@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth import login, logout, authenticate
 import markdown
 from .forms import PostForm
 from .models import Post
@@ -6,6 +7,9 @@ from .models import Post
 def home(request):
     return render(request, 'index.html')
 
+
+def info(request):
+    return render(request, 'info.html')
 
 def write(request):
     if request.method == 'POST':
@@ -28,3 +32,10 @@ def write_detail(request, post_id):
 def post_list(request):
     posts = Post.objects.all()
     return render(request, 'post/post_list.html', {'posts': posts})
+
+
+def login(request):
+    return render(request, 'auth/login.html', )
+
+def register(request):
+    pass
