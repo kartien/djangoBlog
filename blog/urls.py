@@ -10,5 +10,5 @@ urlpatterns = [
     path('posts_list/', views.post_list, name="posts_list"),
     # authentication
     path('login/', views.login, name="login"),
-    path('register/', views.register, name='register/'),
+    path('register/', views.register, name='register'),
 ]

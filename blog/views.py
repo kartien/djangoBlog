@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout, authenticate
 import markdown
-from .forms import PostForm
+from .forms import PostForm, RegisterForm
 from .models import Post
 # Create your views here.
 def home(request):
@@ -38,4 +38,6 @@ def login(request):
     return render(request, 'auth/login.html', )
 
 def register(request):
-    pass
+    if request.method == 'GET':
+        form = RegisterForm()
+        return render(request, 'auth/register.html', {'form': form})

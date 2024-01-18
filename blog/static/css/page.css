@@ -2,13 +2,8 @@ body {
     background-color: #C4FCEF;
 }
 
-.name {
-    font-size: 24px;
-    text-transform: uppercase;
-    font-family: "Roboto Mono", monospace;
-    font-weight: 600;
-    font-style: normal;
-}
+
+
 
 .texts {
     font-size: 16px;

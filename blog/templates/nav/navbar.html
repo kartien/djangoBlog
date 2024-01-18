@@ -2,11 +2,22 @@
 {% load static %}
 {% load bootstrap5 %} {% bootstrap_css %}
 {% block content %}
+<style>
+  .name {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none; 
+}
+
+</style>
 <link rel="stylesheet" href="{% static 'css/page.css' %}" />
 <nav class="navbar navbar-expand-lg navegacion navbar-light ">
 
   <div class="container container-fluid">
-    <h1 class="name">Kartien</h1>
+    <a class="text-black name" href="{% url 'home' %}">Kartien</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -16,7 +27,7 @@
           <a class="nav-link active text-black  texts"  href="{% url 'info' %}">Info</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active text-black texts" >Registrate</a>
+          <a class="nav-link active text-black texts" href="{% url 'register' %}" >Registrate</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active text-black texts"  href="{% url 'write' %}">Escribe</a>
@@ -28,10 +39,11 @@
           <a class="nav-link active text-black texts" href="#" >Apoya</a>
         </li>
       </ul>
-      <!-- <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      </form> -->
+     
     </div>
   </div>
 </nav>
 {% endblock content %}
+ <!-- <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      </form> -->

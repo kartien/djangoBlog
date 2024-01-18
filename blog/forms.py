@@ -20,9 +20,15 @@ class LoginForm(forms.Form):
     
     
 class RegisterForm(UserCreationForm):
-     pass   
-    
-
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password', 'password2']
+        widgets = {
+            'username': forms.TextInput(attrs={'class': 'form-control custom-form-input'}),
+            'email': forms.TextInput(attrs={'class': 'form-control custom-form-input'}),
+            'password': forms.PasswordInput(attrs={'class': 'form-control custom-form-input'}),
+            'password2': forms.PasswordInput(attrs={'class': 'form-control custom-form-input'})
+        }
 class Write(forms.Form):
     title = forms.CharField(label="Titulo", max_length=100)
     
