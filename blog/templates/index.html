@@ -1,28 +1,52 @@
-{% extends 'base.html' %}  
-{% block content %} 
-
-{% include 'nav/navbar.html' %}
-{% load static %} 
+{% extends 'base.html' %} {% block content %} {% include 'nav/navbar.html' %} 
+{% include 'snippets/modal.html' %} {% load static %}
 
 <body class="page">
   <link rel="stylesheet" href="{% static 'css/page.css' %}" />
   <div class="card">
     <div class="container p-4 d-md-flex align-items-md-center">
       <div class="flex-shrink-0">
-        <img src="{% static 'img/image.png' %}" alt="Responsive image" class="img-fluid" style="max-width: 400px;">
+        <img
+          src="{% static 'img/image.png' %}"
+          alt="Responsive image"
+          class="img-fluid"
+          style="max-width: 400px"
+        />
       </div>
       <div class="flex-grow-1 mt-4 mt-md-0 ms-md-4">
-        <p class="fs-4 parrafo">Escribe sobre artículos de programación o algún tema que pienses que es relevante para cualquier sector, "de manera anónima o crea tu propio perfil".</p>
+        <p class="fs-4 parrafo">
+          Escribe sobre artículos de programación o algún tema que pienses que
+          es relevante para cualquier sector, "de manera anónima o crea tu
+          propio perfil".
+        </p>
+        <div class="col-6 text-right">
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#escribe"
+          >
+            Escribe
+          </button>
+        </div>
       </div>
     </div>
   </div>
   <div class="mt-4">
     <div class="container p-4 d-md-flex align-items-md-center">
       <div class="flex-shrink-0">
-        <img src="{% static 'img/image2.png' %}" alt="Responsive image" class="img-fluid" style="max-width: 400px;">
+        <img
+          src="{% static 'img/image2.png' %}"
+          alt="Responsive image"
+          class="img-fluid"
+          style="max-width: 400px"
+        />
       </div>
       <div class="flex-grow-1 mt-4 mt-md-0 ms-md-4">
-        <p class="fs-4 parrafo">¡Inspira al mundo con tus ideas! ¿Tienes algo único que compartir? ¡Escribe y deja que tu voz sea escuchada!</p>
+        <p class="fs-4 parrafo">
+          ¡Inspira al mundo con tus ideas! ¿Tienes algo único que compartir?
+          ¡Escribe y deja que tu voz sea escuchada!
+        </p>
       </div>
     </div>
   </div>

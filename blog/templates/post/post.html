@@ -1,7 +1,7 @@
 {% extends 'base.html' %}  
 {% block content %} 
-
 {% include 'nav/navbar.html' %}
+{% include 'snippets/modal.html' %}
 {% load static %} 
 
 <style>
@@ -31,9 +31,7 @@
 </style>
 
 <div class="container">
-    
-    <div class="row justify-content-center mt-4">
-        
+    <div class="row justify-content-center mt-4">  
         <div class="col-md-6">
             <h1 class="mt-4">Redacta un artículo o historia</h1>
             <form action="" method="POST" class="mt-3">
@@ -43,17 +41,18 @@
                     {{ form.title }}
                 </div>
                 <div class="mb-3">
-                   
+                    
                     {{ form.image }}
                 </div>
                 <div class="mb-3">
                     <label for="{{ form.content.id_for_label }}" class="form-label custom-form-label">Contenido:</label>
                     {{ form.content }}
                 </div>
-                <button type="submit" class="btn custom-btn-primary">Guardar</button>
+                <div class="">
+                    <button type="submit" class="btn custom-btn-primary">Guardar</button>
+                </div>
             </form>
         </div>
     </div>
 </div>
-
 {% endblock content %}

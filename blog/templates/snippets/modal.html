@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="modal fade" id="escribe" tabindex="-1" aria-labelledby="escribeLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="escribeLabel">Elige una forma de publicación</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <button type="button" class="btn btn-primary">Anónimamente</button>
+          <button type="button" class="btn btn-success">Regístrate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
