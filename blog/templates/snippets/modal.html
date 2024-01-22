@@ -10,9 +10,16 @@
         </div>
         <div class="modal-body">
           <button type="button" class="btn btn-primary">Anónimamente</button>
-          <button type="button" class="btn btn-success">Regístrate</button>
+          <button type="button" id="registerBtn" class="btn btn-success">Regístrate</button>
         </div>
       </div>
     </div>
   </div>
+  {% block scripts %}
+  <script>
+    document.getElementById('registerBtn').addEventListener('click', function() {
+      window.location.href = "{% url 'register' %}";
+    });
+  </script>
+  {% endblock %}
 {% endblock content %}
