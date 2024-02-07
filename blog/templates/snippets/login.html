@@ -1,0 +1,53 @@
+{% block content %}
+{% load static %}
+<style>
+  /* Restaurar el tamaño de fuente en el modal */
+  #registroModal {
+    font-size: 1rem; /* Otra vez el tamaño de fuente deseado para el modal */
+  }
+  /* Estilo personalizado para el modal */
+  .modal-content.custom-modal {
+    background-color: #EEF5FF; /* Cambia el color de fondo del modal a blanco */
+    /* Otros estilos personalizados que desees agregar */
+  }
+</style>
+<div class="modal fade " id="loginModal" tabindex="-1" aria-labelledby="registroModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content custom-modal"> <!-- Añade la clase custom-modal aquí -->
+      <div class="modal-header">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+          <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+        </svg>
+        <h5 class="modal-title" id="registroModalLabel">Iniciar Sesion</h5>
+        
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="#" method="post">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="username" class="form-label">Correo electronico" </label>
+            <input type="text" class="form-control" id="username" name="username" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Contraseña:</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+          </div>
+          <!-- Otros campos del formulario -->
+          <!-- Botón de registro -->
+          <button type="submit" class="btn btn-primary">Registrarse</button>
+        </form>
+      </div>
+      <!-- Puedes agregar un footer si es necesario -->
+    </div>
+  </div>
+</div>
+  </div>
+  {% block scripts %}
+  <script>
+    document.getElementById('registerBtn').addEventListener('click', function() {
+      window.location.href = "";
+    });
+  </script>
+  {% endblock %}
+{% endblock content %}

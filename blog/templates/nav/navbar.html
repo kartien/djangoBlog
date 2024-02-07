@@ -1,7 +1,12 @@
-{% extends 'base.html' %} 
-{% load static %}
-{% load bootstrap5 %} {% bootstrap_css %}
-{% block content %}
+{% block content %} 
+{% load static %} 
+ 
+{% load bootstrap5 %} 
+{% bootstrap_css %} 
+{% include 'snippets/login.html' %}
+{% include 'snippets/register.html' %}
+
+
 <style>
   .name {
     font-size: 24px;
@@ -9,41 +14,64 @@
     font-family: "Roboto Mono", monospace;
     font-weight: 600;
     font-style: normal;
-    text-decoration: none; 
-}
-
+    text-decoration: none;
+  }
 </style>
 <link rel="stylesheet" href="{% static 'css/page.css' %}" />
-<nav class="navbar navbar-expand-lg navegacion navbar-light ">
-
+<nav class="navbar navbar-expand-lg navegacion navbar-light">
   <div class="container container-fluid">
     <a class="text-black name" href="{% url 'home' %}">Kartien</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-4 mb-lg-0 mr-sm-2 ">
+      <ul class="navbar-nav ms-auto mb-4 mb-lg-0 mr-sm-2">
         <li class="nav-item">
-          <a class="nav-link active text-black  texts"  href="{% url 'info' %}">Info</a>
+          <a class="nav-link active text-black texts" href="{% url 'info' %}"
+            >Info</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link active text-black texts" href="{% url 'register' %}" >Registrate</a>
+          <a
+            class="nav-link active text-black texts"
+            href="#"
+            data-bs-toggle="modal"
+            data-bs-target="#registerModal"
+            >Registrate</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link active text-black texts"  href="{% url 'login' %}">Incia Sesion</a>
+          <a
+            class="nav-link active text-black texts"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
+            href="#"
+            >Incia Sesion</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link active text-black texts"  href="{% url 'posts_list' %}">Posts</a>
+          <a
+            class="nav-link active text-black texts"
+            href="{% url 'posts_list' %}"
+            >Posts</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link active text-black texts" href="#" >Apoya</a>
+          <a class="nav-link active text-black texts" href="#">Apoya</a>
         </li>
       </ul>
-     
     </div>
   </div>
 </nav>
 {% endblock content %}
- <!-- <form class="d-flex">
+<!-- <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       </form> -->

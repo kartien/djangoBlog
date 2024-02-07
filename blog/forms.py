@@ -15,9 +15,16 @@ class PostForm(forms.ModelForm):
 
 
 class LoginForm(forms.Form):
-    username = forms.CharField(max_length=65)
-    password = forms.CharField(max_length=50, widget=forms.PasswordInput)
-    
+    username = forms.CharField(
+        max_length=65,
+        widget=forms.TextInput(attrs={'class': 'form-control custom-form-input'})
+    )
+    password = forms.CharField(
+        max_length=50,
+        widget=forms.PasswordInput(attrs={'class': 'form-control custom-form-input'})
+    )
+
+
     
 class RegisterForm(UserCreationForm):
     class Meta:
@@ -29,6 +36,7 @@ class RegisterForm(UserCreationForm):
             'password': forms.PasswordInput(attrs={'class': 'form-control custom-form-input'}),
             'password2': forms.PasswordInput(attrs={'class': 'form-control custom-form-input'})
         }
+        
 class Write(forms.Form):
     title = forms.CharField(label="Titulo", max_length=100)
     

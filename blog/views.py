@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout, authenticate
 import markdown
-from .forms import PostForm, RegisterForm
+from .forms import PostForm, RegisterForm, LoginForm
 from .models import Post
 # Create your views here.
 def home(request):
@@ -35,7 +35,19 @@ def post_list(request):
 
 
 def login(request):
-    return render(request, 'auth/login.html', )
+    if request.method == 'POST':
+        # Si el formulario fue enviado, procesar los datos
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            # Aquí puedes realizar acciones adicionales con los datos del formulario si es necesario
+            # ...
+            return render(request, 'auth/success.html')  # Por ejemplo, redirigir a una página de éxito
+    else:
+        # Si es un GET, simplemente mostrar el formulario vacío
+        form = LoginForm()
+
+    return render(request, 'auth/login.html', {'form': form})
+
 
 def register(request):
     if request.method == 'GET':
