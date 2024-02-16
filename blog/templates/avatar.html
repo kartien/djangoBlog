@@ -1,0 +1,36 @@
+<div class="sm:col-span-6" x-data="{clear: false}">
+    <div class="mt-1 flex items-center" :class="clear && 'blur-sm'">
+      <span class="h-12 w-12 rounded-full overflow-hidden bg-gray-100 mr-2">
+       {% if widget.is_initial %}
+        <img class="mr-3" src="{{ widget.value.url }}" alt="{{ widget.value}}">
+        {% else %}
+        <svg class="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z"></path>
+        </svg>
+        {% endif %}
+      </span>
+      <label for="avatar" class="mt-0 relative cursor-pointer bg-white 
+              rounded-md font-medium text-indigo-600 hover:text-indigo-500
+              focus-within:outline-none focus-within:ring-2 
+              focus-within:ring-offset-2 focus-within:ring-indigo-500">
+       <span class="sr-only">Upload a file</span>
+       <input class=" file:mr-4 file:py-2 file:px-4 file:border-0 
+                      file:text-sm file:font-semibold file:bg-indigo-50 
+                      file:text-violet-700 hover:file:bg-violet-100" 
+             type="{{ widget.type }}" 
+             name="{{ widget.name }}"
+             
+      </label>
+    </div>
+    {% if not widget.required %}
+      <div class="flex flex-row mt-2 px-2">
+       <label class="mt-0 mr-2" for="{{ widget.checkbox_id }}">
+              Remove Profile Photo
+       </label>
+       <input x-model="clear" type="checkbox" 
+              name="{{ widget.checkbox_name }}" 
+              id="{{ widget.checkbox_id }}"
+              {% if widget.attrs.disabled %} disabled{% endif %}>
+      </div>
+    {% endif %}
+  </div>

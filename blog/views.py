@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout, authenticate
 import markdown
-from .forms import PostForm, RegisterForm, LoginForm
+from .forms import PostForm, LoginForm, RegisterForm
+# RegisterForm UpdateProfileForm
 from .models import Post
 # Create your views here.
 def home(request):
@@ -49,7 +50,35 @@ def login(request):
     return render(request, 'auth/login.html', {'form': form})
 
 
+
 def register(request):
-    if request.method == 'GET':
-        form = RegisterForm()
-        return render(request, 'auth/register.html', {'form': form})
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("/write")
+    else:
+        form = RegisterForm()  # Este formulario debe inicializarse fuera del bloque 'else'
+        
+    return render(request, 'auth/register.html', {'form': form})
+    # print("Usuario registrado")
+    #     if form.is_valid():
+    #         form.save()
+    #         # Redireccionar a la página deseada después de un registro exitoso
+    #         return redirect('post/post.html')
+    # else:
+    #     form = RegisterForm()
+   
+
+
+# def register(request):
+#     if request.method == 'POST':
+#         form = UpdateProfileForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect("/write")
+#     else:
+#         form = UpdateProfileForm()  # Este formulario debe inicializarse fuera del bloque 'else'
+        
+#     return render(request, 'avatar.html', {'form': form})
+#     print("Usuario registrado")

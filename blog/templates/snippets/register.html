@@ -1,11 +1,10 @@
 {% block content %}
+{% block title %} Registrase {% endblock %}
 {% load static %}
 <style>
-/* Restaurar el tamaño de fuente en el modal */
 #registroModal {
-  font-size: 1rem; /* Otra vez el tamaño de fuente deseado para el modal */
+  font-size: 1rem;
 }
-
 </style>
 <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registroModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -15,35 +14,29 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="#" method="post">
+        <form method="POST" class="form-group">
+          {% csrf_token %}
+          {{ form }}
+          <button type="submit" class="btn btn-success">Register</button>
+            </form>
+        <!-- <form method="POST">
           {% csrf_token %}
           <div class="mb-3">
-            <label for="username" class="form-label">Nombre de usuario:</label>
-            <input type="text" class="form-control" id="username" name="username" required>
+            <label for="email" class="form-label">Nombre del Usuario</label>
+            <input type="" for="{{ form.username }}">
           </div>
           <div class="mb-3">
-            <label for="email" class="form-label">Correo del usuario:</label>
-            <input type="email" class="form-control" id="email" name="email" required>
+            <label for="password1" class="form-label">Contraseña:</label>
+            <input type="text" name="" id="" for="{{ form.password1 }}">
           </div>
           <div class="mb-3">
-            <label for="password" class="form-label">Contraseña:</label>
-            <input type="password" class="form-control" id="password" name="password" required>
+            <label for="password2" class="form-label">Repetir Contraseña:</label>
+           <input type="text" for=" {{ form.password1 }}">
           </div>
-          <!-- Otros campos del formulario -->
-          <!-- Botón de registro -->
           <button type="submit" class="btn btn-primary">Registrarse</button>
-        </form>
+        </form> -->
       </div>
-      <!-- Puedes agregar un footer si es necesario -->
-    </div>
   </div>
 </div>
   </div>
-  {% block scripts %}
-  <script>
-    document.getElementById('registerBtn').addEventListener('click', function() {
-      window.location.href = "";
-    });
-  </script>
-  {% endblock %}
-{% endblock content %}%
+{% endblock content %}
